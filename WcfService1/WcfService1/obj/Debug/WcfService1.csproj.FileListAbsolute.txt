@@ -1,0 +1,5 @@
+C:\Users\Toshiba\Documents\GitHub\SoftWareEng\WcfService1\WcfService1\bin\WcfService1.dll
+C:\Users\Toshiba\Documents\GitHub\SoftWareEng\WcfService1\WcfService1\bin\WcfService1.pdb
+C:\Users\Toshiba\Documents\GitHub\SoftWareEng\WcfService1\WcfService1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Toshiba\Documents\GitHub\SoftWareEng\WcfService1\WcfService1\obj\Debug\WcfService1.dll
+C:\Users\Toshiba\Documents\GitHub\SoftWareEng\WcfService1\WcfService1\obj\Debug\WcfService1.pdb
