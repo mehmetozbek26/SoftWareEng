@@ -1,0 +1,21 @@
+faruk	bey	567
+
+ustun	agabey	234
+
+murat	bey	987
+
+kan	bet	890
+
+omer  yesilmen	2454
+
+kan	man	34
+
+can	kol	9087
+
+melih	danis	345
+
+mulaim	sert	234
+
+kasim	asim	9078
+
+huseyin	kado	4567
