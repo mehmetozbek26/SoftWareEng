@@ -1,0 +1,8 @@
+
+omer	yesil	456
+
+erkam	yavuz	135
+
+faruk	atasoy	465
+
+kasim	aydin	897
