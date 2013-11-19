@@ -115,7 +115,33 @@ namespace AnaOkuluBilisim
                 errorProvider1.SetError(txtoldpwd, "Please enter current password");
                 i = 1;
             }
-           
+            else
+            {
+                txtoldpwd.BackColor = Color.White;
+            }
+            if (txtnewpwd.Text.Length < 4)
+            {
+                txtnewpwd.BackColor = Color.LightCoral;
+                txtconfirmpwd.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtnewpwd, "Please enter your password and password length should be minimum four characters");
+                errorProvider1.SetError(txtconfirmpwd, "Your password should be match to new password");
+                i = 1;
+            }
+            else
+            {
+                txtconfirmpwd.BackColor = Color.White;
+                txtnewpwd.BackColor = Color.White;
+            }
+            if (txtconfirmpwd.Text.Length < 4)
+            {
+                txtconfirmpwd.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtconfirmpwd, "Your password should be match to new password");
+                i = 1;
+            }
+            else
+            {
+                txtconfirmpwd.BackColor = Color.White;
+            }
             return i;
         }
     }
