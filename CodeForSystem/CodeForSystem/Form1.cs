@@ -34,7 +34,65 @@ namespace AnaOkuluBilisim
                         conn.Open();
                         int row = cmd.ExecuteNonQuery();
                         if (row > 0)
-                       
+                        {
+                            MessageBox.Show("Password changed", "Message");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Password did not change your user id or password is wrong", "Message");
+                            txtuserid.Clear();
+                            txtoldpwd.Clear();
+                            txtnewpwd.Clear();
+                            txtconfirmpwd.Clear();
+                        }
+                        conn.Close();
+                        txtuserid.Clear();
+                        txtoldpwd.Clear();
+                        txtnewpwd.Clear();
+                        txtconfirmpwd.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your new password and confirm password is not same", "Message");
+                        txtnewpwd.Clear();
+                        txtconfirmpwd.Clear();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnresetpwd_Click_1(object sender, EventArgs e)
+        {
+            txtuserid.Clear();
+            txtoldpwd.Clear();
+            txtnewpwd.Clear();
+            txtconfirmpwd.Clear();
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtuserid_Enter(object sender, EventArgs e)
+        {
+            Information.Text = "Please enter user id";
+        }
+
+        private void txtoldpwd_Enter(object sender, EventArgs e)
+        {
+            Information.Text = "Please enter current password";
+        }
+
+        private void txtnewpwd_Enter(object sender, EventArgs e)
+        {
+            Information.Text = "Please enter new password";
+        }
+
+       
             return i;
         }
     }
