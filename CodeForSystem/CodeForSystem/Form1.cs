@@ -92,7 +92,30 @@ namespace AnaOkuluBilisim
             Information.Text = "Please enter new password";
         }
 
-       
+        private void txtconfirmpwd_Enter(object sender, EventArgs e)
+        {
+            Information.Text = "Please re-enter new password";
+        }
+        private int validatedata()
+        {
+            int i = 0;
+            if (txtuserid.Text.Length == 0)
+            {
+                txtuserid.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtuserid, "Please enter user Id");
+                i = 1;
+            }
+            else
+            {
+                txtuserid.BackColor = Color.White;
+            }
+            if (txtoldpwd.Text.Length < 4)
+            {
+                txtoldpwd.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtoldpwd, "Please enter current password");
+                i = 1;
+            }
+           
             return i;
         }
     }
