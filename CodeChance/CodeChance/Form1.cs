@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace CodeChance
+
 {
     public partial class Form1 : Form
     {
@@ -73,6 +74,14 @@ namespace CodeChance
                 samplers.Add(currentSampler.GetValue());
             return samplers;
         }
+        return new Finder<Order>(
+		Where.Order.User == CurrentUser &&
+		(
+			Where.Order.TotalCost > Money.Dollars(150) ||
+			Where.Order.OrderLines.Count > 15
+		),
+		OrderBy.Order.CreatedAt
+	).List();
     }
 }
         }
