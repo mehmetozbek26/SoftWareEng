@@ -1,0 +1,9 @@
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\bin\Debug\Temporary.exe
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\bin\Debug\Temporary.pdb
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\Temporary.Form1.resources
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\Temporary.Properties.Resources.resources
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\Temporary.exe
+C:\Users\sa\Documents\GitHub\SoftWareEng\Temporary\Temporary\obj\x86\Debug\Temporary.pdb
