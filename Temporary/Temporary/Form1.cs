@@ -36,6 +36,14 @@ namespace Temporary
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            string user = new StringBuilder()
+    .Append("Name: ")
+    .Append(user.Name)
+    .AppendLine()
+    .Append("Email: ")
+    .Append(user.Email)
+    .AppendLine()
+    .ToString();
         }
     }
 }
