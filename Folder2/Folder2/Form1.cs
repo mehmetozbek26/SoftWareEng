@@ -33,7 +33,46 @@ namespace Folder2
     {
         return new MixingDesk(channels);
     }
+}public class SamplerBuilder
+{
+    private StudioBuilder parent;
+    private int hardDiskSize;
+    private string model;
+
+    public SamplerBuilder(StudioBuilder parent)
+    {
+        this.parent = parent;
+    }
+
+    public SamplerBuilder DiskSize(int hardDiskSize)
+    {
+        this.hardDiskSize = hardDiskSize;
+        return this;
+    }
+
+    public SamplerBuilder Model(string model)
+    {
+        this.model = model;
+        return this;
+    }
+
+    public SamplerBuilder Sampler()
+    {
+        return parent.Sampler();
+    }
+
+
+    public Studio End()
+    {
+        return parent.End();
+    }
+
+    public Sampler GetValue()
+    {
+        return new Sampler(hardDiskSize, model);
+    }
 }
+
         }
     }
 }
