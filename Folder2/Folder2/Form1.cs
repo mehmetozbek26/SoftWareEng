@@ -72,7 +72,16 @@ namespace Folder2
         return new Sampler(hardDiskSize, model);
     }
 }
-
+Studio studio = StudioBuilder.Studio()
+                    .MixingDesk()
+                        .Channels(10)
+                    .Sampler()
+                        .DiskSize(1000)
+                        .Model("Akai 3000")
+                    .Sampler()
+                        .DiskSize(1000)
+                        .Model("Emu ultra")
+                    .End();
         }
     }
 }
