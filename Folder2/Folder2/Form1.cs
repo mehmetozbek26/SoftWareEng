@@ -83,5 +83,10 @@ Studio studio = StudioBuilder.Studio()
                         .Model("Emu ultra")
                     .End();
         }
-    }
+    }public IPropertyData<T> SetupProperty(Expression<Func<T, Object>> property)
+{
+    PropertyData<T> propertyData = GetPropertyFromExpression(property);
+    allPropertiesForProxy.Add(propertyData);
+    return propertyData;
+}
 }
