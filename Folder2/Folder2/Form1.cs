@@ -63,4 +63,18 @@ namespace Folder2
     allPropertiesForProxy.Add(propertyData);
     return propertyData;
 }
+
+    private PropertyData<T> GetPropertyFromExpression(Expression<Func<T, Object>> property)
+{
+    if (property is LambdaExpression)
+    {
+        PropertyData<T> propertyData = new PropertyData<T>();
+        ((IInterceptablePropertyData)propertyData).Proxy = proxy;
+        propertyData.Mock = this;
+        ((IInterceptablePropertyData)propertyData).Property = ExpressionHelper.GetProperty(property);
+        return propertyData;
+    }
+            
+    throw new InvalidOperationException("Could not create Setup for this property");
+}
 }
