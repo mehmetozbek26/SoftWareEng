@@ -56,36 +56,10 @@ namespace Folder2
         return this;
     }
 
-    public SamplerBuilder Sampler()
-    {
-        return parent.Sampler();
-    }
-
-
-    public Studio End()
-    {
-        return parent.End();
-    }
-
-    public Sampler GetValue()
-    {
-        return new Sampler(hardDiskSize, model);
-    }
-}
-Studio studio = StudioBuilder.Studio()
-                    .MixingDesk()
-                        .Channels(10)
-                    .Sampler()
-                        .DiskSize(1000)
-                        .Model("Akai 3000")
-                    .Sampler()
-                        .DiskSize(1000)
-                        .Model("Emu ultra")
-                    .End();
-        }
-    }public IPropertyData<T> SetupProperty(Expression<Func<T, Object>> property)
+  public IPropertyData<T> SetupProperty(Expression<Func<T, Object>> property, object returnValue)
 {
     PropertyData<T> propertyData = GetPropertyFromExpression(property);
+    propertyData.Returns(returnValue);
     allPropertiesForProxy.Add(propertyData);
     return propertyData;
 }
