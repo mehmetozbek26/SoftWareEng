@@ -56,44 +56,14 @@ namespace Folder2
         return this;
     }
 
-  public IPropertyData<T> SetupProperty(Expression<Func<T, Object>> property, object returnValue)
+internal sealed class PropertyData<T> : IPropertyData<T>, IInterceptablePropertyData, ISupportExceptions
 {
-    PropertyData<T> propertyData = GetPropertyFromExpression(property);
-    propertyData.Returns(returnValue);
-    allPropertiesForProxy.Add(propertyData);
-    return propertyData;
-}
+    private object returnValue;
 
-    private PropertyData<T> GetPropertyFromExpression(Expression<Func<T, Object>> property)
-{
-    if (property is LambdaExpression)
+    public IPropertyData<T> Returns(object returnValue)
     {
-        PropertyData<T> propertyData = new PropertyData<T>();
-        ((IInterceptablePropertyData)propertyData).Proxy = proxy;
-        propertyData.Mock = this;
-        ((IInterceptablePropertyData)propertyData).Property = ExpressionHelper.GetProperty(property);
-        return propertyData;
+        this.returnValue = returnValue;
+        return this;
     }
-            
-    throw new InvalidOperationException("Could not create Setup for this property");
-}
-
-    public static PropertyInfo GetProperty<T>(Expression<Func<T, Object>> propertyExpression)
-{
-    var lambda = propertyExpression as LambdaExpression;
-    MemberExpression memberExpression;
-    if (lambda.Body is UnaryExpression)
-    {
-        var unaryExpression = lambda.Body as UnaryExpression;
-        memberExpression = unaryExpression.Operand as MemberExpression;
-    }
-    else
-    {
-        memberExpression = lambda.Body as MemberExpression;
-    }
-
-    var propertyInfo = memberExpression.Member as PropertyInfo;
-
-    return propertyInfo;
 }
 }
