@@ -1,9 +1,0 @@
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\bin\Debug\Chance.exe
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\bin\Debug\Chance.pdb
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\Chance.Form1.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\Chance.Properties.Resources.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\Chance.exe
-C:\Users\sa\Documents\GitHub\SoftWareEng\Chance\Chance\obj\x86\Debug\Chance.pdb
