@@ -7,3 +7,4 @@ C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\Generat
 C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.exe
 C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.pdb
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\AskerDagitimProgrami.Form1.resources
