@@ -1,0 +1,10 @@
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\bin\Debug\FormFile.exe
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\bin\Debug\FormFile.pdb
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.Form1.resources
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.Properties.Resources.resources
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.exe
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\FormFile.pdb
+C:\Users\sa\Documents\GitHub\SoftWareEng\FormFile\FormFile\obj\x86\Debug\AskerDagitimProgrami.Form1.resources
