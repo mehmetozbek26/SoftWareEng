@@ -1,0 +1,22 @@
+//KAYDET
+SqlConnection baglanti = new SqlConnection();
+baglanti.ConnectionString = "Data Source=VT221;initial catalog=Muhtarlık;integrated security=true";
+baglanti.Open();
+
+SqlCommand sorgu = new SqlCommand();
+sorgu.Connection = baglanti;
+sorgu.CommandText = "insert into Kisi_Bilgileri(Adi,Soyadi,Cinsiyeti,Uyrugu,Meslegi ,Cep_Telefonu,İkametgah_Adresi) values ('" + @textBox1.Text + "','" + @textBox2.Text + "','" + @comboBox1.Text + "','" + @textBox3.Text + "','" + @textBox4.Text + "','" + @textBox5.Text + "','" + @textBox6.Text + "')";
+
+if (sorgu.ExecuteNonQuery() == 1)
+MessageBox.Show("Kayıt eklendi.", "Kayıt İşlemi");
+else
+MessageBox.Show("Hata!");
+textBox1.Clear();
+textBox2.Clear();
+textBox3.Clear();
+textBox4.Clear();
+textBox5.Clear();
+textBox6.Clear();
+comboBox1.Text = "";
+
+baglanti.Close();
