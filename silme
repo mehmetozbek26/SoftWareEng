@@ -1,0 +1,10 @@
+/SİLME
+SqlConnection baglanti = new SqlConnection();
+baglanti.ConnectionString = "data source=VT221;initial catalog=Muhtarlık;integrated security=true";
+baglanti.Open();
+
+SqlCommand sorgu = new SqlCommand();
+sorgu.Connection = baglanti;
+sorgu.CommandText = "delete from Kisi_Bilgileri where Adi='" + @textBox8.Text + "'";
+if (sorgu.ExecuteNonQuery() == 1)
+MessageBox.Show("Silmek İstediğinizden Emin Misiniz?", "Silme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
