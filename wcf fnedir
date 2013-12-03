@@ -1,0 +1,120 @@
+.Net framework 3.0 ile hayatımızın bir parçası olan Windows Communication Foundation (WCF) hakkında yazmayı düşündüğün makalelerden bu ilkinde öncelikle birlikte WCF hizmetlerine ısınmamızı hedefliyorum, hedefim sizleri fazla da yormadan kolayca nasıl bir WCF hizmeti oluşturabileceğinizi paylaşmak.
+   En temel anlatımıyla Windows Communication Foundation, .Net framework 3.0’ın çıkartılmasıyla birlikte hayatımıza giren ve .Net framework ile yazdığınız uygulamaların iletişim katmanı olmayı amaç edinen bir kütüphanedir. .Net Remoting, XML Web Servisleri, MSMQ, Net pipe, tcp/ip gibi pek çok farklı yöntemi tek bir çatı altında topladığını bilmek bile ne denli güçlü olduğunu anlamanıza yetecektir.
+  WCF hizmetleriyle çalışacaksanız öncelikle işin ABC’sini öğrenmelisiniz. WCF hakkında okuyabileceğiniz pek çok farklı giriş makalesinde de duyacağınız bu ABC benzetmesi, bir şaka olmaktan öte gerçekten de WCF’in ana bileşenlerini anlatan bir kısaltmadır. Peki bu kısaltma neyi ifade etmekte?
+•	Address (Adres) : Eğer insanların/uygulamaların kullanacağı bir hizmet tanımı yapıyorsanız tabiki bu hizmetin belirli bir adresi olmalı, aynı iş yerlerinin/mağazaların olduğu gibi. Hizmetim intranet/internet üzerinde hangi adreste bulunmakta? İlk harfimiz A bunu temsil etmektedir.
+•	Binding (Bağlayıcı) : Her bir WCF hizmetinde mutlaka yayınladığınız hizmete veri göndermek ya da hizmetten veri almak için uygulamalarca kullanılacak olan bir iletişim protokolünüz olmalıdır. Hizmetimle ne şekilde konuşulacak? ikinci harfimiz B bunu temsil etmektedir.
+•	Contract (Kontrat) : Yayınladığınız her bir WCF hizmetinde kullanıcılarınıza sunmayı tahahüt edeceğiniz bir takım fonksyonaliteler bulanacaktır. Gerçek hayatta olduğu gibi sizin ve müşterilerinizin sorumluluklarının tanımlandığı ve taraflarca üzerinde anlaşılan bir kontrat bulunmalıdır. WCF hizmetinizde tanımladığınız bir kontratla, sunduğunuz fonksiyonalitelerinizde kullanıcılardan beklediğiniz değerler ile bu değerler neticesinde kullanıcıya vermeyi tahahüt ettiğiniz sonuçları belirtebilirsiniz. Hizmetim kullanıcılara hangi fonksiyonaliteleri sunacak? Üçüncü ve son harfimiz C bunu temsil etmektedir.
+   WCF’in ABC’sini özetlemek gerekirse; bir wcf hizmeti tanımında 3 temel soru yanıtlanmalı; nerede? (Adres), nasıl? (Bağlayıcı), ne? (Kontrat)
+   Oluşturacağınız bir WCF hizmeti, arkaplanda hangi yöntemi/teknolojiyi kullanıyor olursa olsun mutlaka ve mutlaka yukarıda sıraladığım bu üç temel bileşene sahip olmalıdır. İsterseniz örnek bir hizmet üzerinde bu üç kavramı tanıyalım;
+   Yeni bir WCF hizmeti tanımlarken ilk önce sunmayı hedeflediğiniz fonsiyonaliteleri netleştirmeli ve bir kontrat ile bunu duyurmalısınız. Sunumlarıma katıldıysanız bunu bende sık sık duymuşsunuzdur; C# dünyasında ne zaman bir kontrattan bahsetsem aklınıza ilk olarakarayüz (interface) gelmelidir. Aşağıda, yazımın devamında birlikte oluşturacağımız ilk WCF hizmetimize ait örnek bir kontrat bulabilirsiniz.
+1	public interface IOrnekHizmet {
+2	   int Say();
+3	}
+   Gördüğünüz gibi çok basit ve sade bir kontratımız var. Her çağrıda, hizmet içerisinde tutulan sayacın değerini bir arttıracak olan bir fonksiyonalite sunmaktayım. Kontratımı bir WCF hizmetinde kullanabilmek için ufak bir iki dokunuş yapmalıyım;
+•	Öncelikle kontratımın bir hizmette kullanılacağını belirtmeliyim. Bunun için sınıfımın hemen üstünde bir ServiceContract özniteliği tanımlamam yeterli.
+•	Bu adım ardından, sunduğum fonsiyonaliteyi belirtmeliyim. Bunu da benzer şekilde ilgili fonksiyonun üzerine OperationContract özniteliğini koyarak kolaylıkla yapabilirim.
+   Bu iki özniteliğinde kodumuza eklenmesi ardından arayüzümüz aşağıdaki şekli alacaktır;
+1	[ServiceContract(Namespace ="http://www.enterprisecoding.com/WCFOrnekleri")]
+
+2	public interface IOrnekHizmet {
+3	    [OperationContract]
+4	    int Say();
+5	}
+   ServiceContract özniteliğinde Namespace parametresi ile belirttiğimiz isim uzayı bize kontratın neresi için tanımlı olduğunu belirtecektir. Bu sayede farklı yazılım geliştiricilerce yazılmış olan birbirinden bağımsız WCF hizmetlerinin, aynı isme dahi sahip olsa, birbirinden ayırt edilebilmesi sağlanmaktadır. Her ne kadar opsiyonel olan bu parametreye bir değer verilmemesi durumunda framework varsayılan olarak http://tempuri.org/ değerini kullansa da, tavsiyem mutlaka kendinize özgü bir değer vermeniz olacaktır. Tamamen farazi olan ve varlığı uygulamalarca kontrol edilmeyen bu adres, kimi kullanımlarda hizmete ait dokümanların bulunduğu gerçek bir adreste olabilmekte. Bu durumda kullanıcı hızlıca hizmet dokümantasyonuna da ulaşabilecektir. Örneğin; yukarıdaki kod parçacığı içinhttp://www.enterprisecoding.com/WCFOrnekleri/ adresine basit bir dokümantasyon eklenerek hizmet anlatılabilir.
+  Kontratın tanımlanması ardından, asıl işi yapacak olan hizmetimizi tanımlamalı ve kontrat doğrultusunda gerekli tanımlamalarımızı yapmalıyız. Aşağıda IOrnekHizmet  için örnek bir hizmet tanımını bulabilirsiniz;
+01	internal class OrnekHizmet : IOrnekHizmet {
+02	    private int sayac = 0;
+03	 
+04	    #region IOrnekHizmet Üyeleri
+05	 
+06	    public int Say() {
+07	        return ++sayac;
+08	    }
+09	 
+10	    #endregion
+11	}
+   Gördüğünüz gibi hizmetim sadece her Say denildiğinde içeride tuttuğu özel değişkenin (sayac) değerini bir arttırarak istemciye dönmektedir. OrnekHizmet sınıfı içerisinde WCF hizmeti ile ilgili herhangi bir tanımlama bulunmadığı dikkatinizi çekmiştir. Gerekli olan tüm tanımlamaların arayüzümün üzerinde bulunması nedeniyle böyle bir ihtiyaç bulunmamaktadır. Bunun avantajları;
+•	Aynı kontrata uyan (aynı arayüzü uygulayan) birden fazla hizmet için ortak değişiklikleri bir kez yapabilir
+•	Bir hizmet sınıfı farklı arayüzleri, yani farklı hizmet tanımlarını/kontratlarını, destekleyebilir. Bu hizmet tanımları da farklı farklı adres ve protokollerden kullanıcılara sunulabilir
+   İleri düzey kullanımlarda hizmet sınıfı üzerinde de ek tanımlamalar yapılabilmektedir, bu makalenin konusu olmaması nedeniyle detayına girmemekle birlikte bu konuya ilerleyen makalelerimde değinmeye çalışacağım.
+   Hizmetimizin kontratını hazırlayarak, bu kontrata uygun da bir hizmet sınıfı oluşturmamız ardından artık uygun bir adres ve bağlayıcıyı kullanarak WCF hizmetimizi sunabiliriz. WCF’in en güzel yanlarından birisi basit işlerimizi bir kaç satırlık kod ile halledebiliyor olmamızdır, pek çok senaryoda uygulamamızın app.config dosyasında WCF hizmet yapılandırmamızı rahatlıkla yapabiliriz. Aşağıda sizlerle paylaştığım app.config dosyasında örnek WCF hizmetimizi kod yazmadan nasıl yapılandırabileceğinizi görebilirsiniz;
+01	<?xml version="1.0" encoding="utf-8" ?>
+02	<configuration>
+03	  <system.serviceModel>
+04	    <services>
+05	      <service
+06	        name="Com.Enterprisecoding.WCF.Ornek.OrnekHizmet"
+07	        behaviorConfiguration="metaVeriDestegi"
+08	      >
+09	        <host>
+10	          <baseAddresses>
+11	            <add baseAddress="http://localhost:1234/WCFOrnekleri"/>
+
+12	          </baseAddresses>
+13	        </host>
+14	        <endpoint
+15	          address="OrnekHizmet"
+16	          binding="wsHttpBinding"
+17	          contract="Com.Enterprisecoding.WCF.Ornek.IOrnekHizmet"
+18	        />
+19	        <endpoint
+20	           address="mex"
+21	           binding="mexHttpBinding"
+22	           contract="IMetadataExchange"
+23	        />
+24	      </service>
+25	    </services>
+26	     
+27	    <behaviors>
+28	      <serviceBehaviors>
+29	        <behavior name="metaVeriDestegi">
+30	          <serviceMetadata httpGetEnabled="true"  httpGetUrl=""/>
+31	        </behavior>
+32	      </serviceBehaviors>
+33	    </behaviors>
+34	  </system.serviceModel>
+35	</configuration>
+   WCF hizmet yapılandırmamız configuration -> system.serviceModel düğümü altında yer alan iki ana gruptan oluşmakta; hizmetlerimizi tanımladığımız services ve davranışlarımızı tanımladığımız behaviors. Uygulamamız içerisinde oluşturacağımız her bir WCF hizmeti için services düğümü altında bir service girdisi bulunmalıdır. Bir service düğümünün hangi hizmet için olduğu ise name özelliği içerisinde hizmet sınıfının tam adının (namespace + sınıf adı) verilmesi ile anlaşılacaktır. Tanımlanan hizmete ait davranış bilgilerine isebehaviorConfiguration özelliği ile atıfta bulunabiliriz. Burada unutulmaması gereken noktabehaviorConfiguration ile adı belirtilen davranış yapılandırmasına dair behaviors altında mutlaka bir girdi bulunmalıdır. Hizmet tanımları ile davranışların farklı iki düğüm altında tanımlanması bize birden fazla hizmet tanımında aynı davranışları kullanabilmek kolaylığını sunacaktır.
+   Yukarıdaki WCF hizmet yapılandırmamızda baseAddresses düğümü altında hizmetimizin hangi temel adreslerden yayınlanacağını belirtmekteyiz. Servisimiz farklı protokoller için farklı temel adreslere sahip olabilir, hizmetimiz çalışmaya başlarken bu temel adreslerden kullandığımız protokole uygun olanını seçecektir. Sadece http protokolü kullanan bir yapılandırmamız olduğu için örneğimizde http://localhost:1234/WCFOrnekleri temel adresi tanımlanmıştır. Aşağıda ise http ve netTcp için iki farklı temel adresin nasıl tanımlanacağına dair bir yapılandırma parçacığı bulabilirsiniz;
+01	<baseAddreses>
+02	    <addbaseAddress="net.tcp://localhost:1234/WCFOrnekleri/YerelAg"/>
+
+03	    <addbaseAddress="http://localhost:1234/WCFOrnekleri/Internet"/>
+
+04	</baseAddreses>
+05	<endpoint
+06	       address="OrnekHizmet"
+07	       binding="netTcpBinding"
+08	       contract="Com.Enterprisecoding.WCF.Ornek.IOrnekHizmet"
+09	    />
+10	<endpoint
+11	       address="OrnekHizmet"
+12	       binding="wsHttpBinding"
+13	       contract="Com.Enterprisecoding.WCF.Ornek.IOrnekHizmet"
+14	    />
+   Örnek yapılandırmamızda endpoint düğümü ile hizmetimizi hangi adres, protokol (bağlayıcı) ve arayüz (kontrat) ile yayınlayacağımızı belirtmekteyiz. Bu yapılandırma şekli bize bir hizmet sınıfını birden fazla kontrat ile farklı farklı adres ve prokollerle yayınlayabilme şansını vermekte. Aşağıda WCF hizmetleriniz için kullanabileceğiniz öntanımlı binding’leri bulabilirsiniz;
+•	BasicHttpBinding
+•	WSHttpBinding
+•	WSDualHttpBinding
+•	WSFederationHttpBinding
+•	NetTcpBinding
+•	NetNamedPipesBinding
+•	NetMsmqBinding
+•	NetPeerTcpBinding
+•	MsmqIntegrationBinding
+•	BasicHttpContextBinding
+•	NetTcpContextBinding
+•	WebHttpBinding
+•	WSHttpContextBinding
+   Dikkat ettiyseniz örneğimizde IMetadataExchange kontratı ve mexHttpBinding protokolü ile mex adresinden yayınlanan ikinci bir hizmetimiz bulunmakta. mexHttpBinding bize http üzerinden WS-MetadataExchange (WS-MEX) iletişimi yapabilme olanağı sunacaktır, bu da istemcilerin servisimize bağlanacak vekil (proxy) sınıflar oluşturmalarında yardımcı olacaktır. mexHttpBinding, wsHttpBinding’in çalışmasını engelleyen ya da eklenmesi zorunlu bir protokol olmadığından ihtiyaç olmadıkça yapılandırmanıza eklemenize gerek bulunmamakta.
+   Örnek yapılandırmamızın son bölümünde yer alan behaviors düğümü ile hizmetimizin davranışları tanımlanmaktadır. Örneğimizde bu başlık altında sadece servis meta verisinin yayınlanması için bir davranış eklenmiştir. Yapılandırmada kullanılan httpGetEnabled özelliği Http protokolü üzerinden GET yönetimi kullanılarak meta verinin sorgulanıp sorgulanamayacağını belirlemektedir. Bu davranışı eklemeniz ardından hizmetinize bağlanmak üzere vekil sınıflar üretmek isteyen bir yazılımcı hizmet adresinizin sonuna ?WSDL ekleyerek hizmet şemanıza erişebilir (örneğin; http://localhost:1234/WCFOrnekleri?wsdl). İstemci ve sunucu kodlarının sizin tarafınızdan yazıldığı senaryoda bir güvenlik açığı oluşturmamak adına bu davranışı eklememenizi tavsiye ederim. Bu şekilde hizmetinizde sunduğunuz fonksiyonaliteler 3. parti kişilerce sorgulanamayacağından hizmetinize saldırı ihtimalinizi düşürmüş olursunuz.
+   WCF hizmet yapılandırmamızı app.config dosyası içerisinde yaptıktan sonra işimiz oldukça kolaylaşmakta. Yapılandırma sonrasında geriye bir tek uygulamamız içerisinden hizmetimizi başlatmak kalıyor. Aşağıda hizmetimizi nasıl başlatıp sonlandırabileceğinizi bulabilirsiniz;
+1	var hizmetSunucusu = new ServiceHost(typeof(OrnekHizmet));
+2	hizmetSunucusu.Open();
+3	.
+4	.
+5	.
+6	hizmetSunucusu.Close();
+   Bu kod parçacığının ilk satırında OrnekHizmet türü için bir hizmet sunucu oluşturuyoruz. Hizmet sunucumuz başlarken ihtiyaç duyduğu yapılandırma bilgisini app.config içerisinde arayarak tam tür adının (Com.Enterprisecoding.WCF.Ornek.OrnekHizmet) geçtiği service düğümü içerisindeki bilgileri kullanacaktır.
+
+
