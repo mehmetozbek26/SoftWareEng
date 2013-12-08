@@ -1,0 +1,9 @@
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\bin\Debug\arayuz.exe.config
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\bin\Debug\arayuz.exe
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\bin\Debug\arayuz.pdb
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.csprojResolveAssemblyReference.cache
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.Form1.resources
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.Properties.Resources.resources
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.csproj.GenerateResource.Cache
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.exe
+C:\Users\userPC\Documents\GitHub\SoftWareEng\arayuz\arayuz\obj\Debug\arayuz.pdb
