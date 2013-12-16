@@ -1,5 +1,0 @@
-C:\Users\sa\Documents\GitHub\SoftWareEng\CodeForSystem\CodeForSystem\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\sa\Documents\GitHub\SoftWareEng\CodeForSystem\CodeForSystem\obj\x86\Debug\AnaOkuluBilisim.ChangePassword.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\CodeForSystem\CodeForSystem\obj\x86\Debug\CodeForSystem.Properties.Resources.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\CodeForSystem\CodeForSystem\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\sa\Documents\GitHub\SoftWareEng\CodeForSystem\CodeForSystem\obj\x86\Debug\GenerateResource.write.1.tlog
