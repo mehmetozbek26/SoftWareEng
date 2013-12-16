@@ -1,5 +1,0 @@
-C:\Users\sa\Documents\GitHub\SoftWareEng\FormBox3\FormBox3\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\sa\Documents\GitHub\SoftWareEng\FormBox3\FormBox3\obj\x86\Debug\AnaOkuluBilisim.DemirBasGuncelle.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\FormBox3\FormBox3\obj\x86\Debug\FormBox3.Properties.Resources.resources
-C:\Users\sa\Documents\GitHub\SoftWareEng\FormBox3\FormBox3\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\sa\Documents\GitHub\SoftWareEng\FormBox3\FormBox3\obj\x86\Debug\GenerateResource.write.1.tlog
