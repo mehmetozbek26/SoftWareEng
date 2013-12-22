@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.awt.event.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.event.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="846.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="spor.salonu.FXMLDocumentController">
+  <children>
+    <Pane fx:id="anasayfapanel" layoutX="14.0" layoutY="14.0" prefHeight="823.0" prefWidth="572.0" style="#pane{&#10;    -fx-background-image: url(&quot;https://www.google.com/images/srpr/logo3w.png&quot;);&#10;    -fx-background-repeat: stretch;   &#10;    -fx-background-size: 900 506;&#10;    -fx-background-position: center center;&#10;    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); &#10;}&#10;" visible="false">
+      <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="113.0" prefWidth="544.0" visible="true">
+          <children>
+            <Button fx:id="anadurumbt" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#openGiris" prefHeight="48.999900000002526" prefWidth="93.0" text="Durum">
+              <effect>
+                <InnerShadow choke="0.12698412698412698" color="#ccc400" height="61.47618516853876" radius="30.238093911182307" width="61.47619047619047" />
+              </effect>
+            </Button>
+            <Button fx:id="anaprobt" contentDisplay="TOP" layoutX="120.0" layoutY="23.0" mnemonicParsing="false" onAction="#openProgramScene" prefHeight="48.999900000002526" prefWidth="93.0" text="Bir Sonraki &#10;Program" textAlignment="CENTER">
+              <effect>
+                <InnerShadow blurType="ONE_PASS_BOX" choke="0.1984126984126984" color="#33ffb6" height="101.63492063492062" radius="50.31746031746031" width="101.63492063492062" />
+              </effect>
+            </Button>
+            <Button fx:id="anarezervasyonbt" layoutX="226.0" layoutY="23.0" mnemonicParsing="false" onAction="#openRezervasyonScene" prefHeight="48.999900000002526" prefWidth="93.0" text="Rezervasyon">
+              <effect>
+                <InnerShadow choke="0.16666666666666666" color="#78efff" height="87.52380952380952" radius="43.26190476190476" width="87.52380952380952" />
+              </effect>
+              <font>
+                <Font size="12.0" fx:id="x7" />
+              </font>
+            </Button>
+            <Button fx:id="anabugunbt" layoutX="332.0" layoutY="23.0" mnemonicParsing="false" onAction="#openBugunScene" prefHeight="48.999900000002526" prefWidth="93.0" text="Bugün">
+              <effect>
+                <InnerShadow choke="0.47619047619047616" color="#4433ff" height="41.15873015873016" radius="20.07936507936508" width="41.15873015873016" />
+              </effect>
+            </Button>
+            <Button fx:id="anacikisbt" layoutX="437.0" layoutY="23.0" mnemonicParsing="false" onAction="#openGirisScene" prefHeight="48.999900000002526" prefWidth="93.0" text="Çıkış">
+              <effect>
+                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="47.2063492063492" radius="23.1031746031746" width="47.2063492063492" />
+              </effect>
+            </Button>
+          </children>
+        </Pane>
+        <Pane fx:id="anadurumpanel" layoutX="0.0" layoutY="127.0" prefHeight="682.0" prefWidth="572.0" visible="true">
+          <children>
+            <Label layoutX="14.0" layoutY="30.0" prefHeight="38.9609375" prefWidth="213.0" text="ÖZELLİK SEÇİNİZ">
+              <font>
+                <Font size="24.0" fx:id="x8" />
+              </font>
+            </Label>
+            <LineChart id="LineChart" fx:id="durumlinechart" layoutX="25.0" layoutY="117.0" title="">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <ComboBox fx:id="durumcombobox" layoutX="256.0" layoutY="30.0" onAction="#lineChartDeneme" prefHeight="38.9609375" prefWidth="269.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+          </children>
+        </Pane>
+        <Pane fx:id="anapro" layoutX="0.0" layoutY="95.0" prefHeight="714.0" prefWidth="572.0" visible="false">
+          <children>
+            <Pane fx:id="programbirsonraki" layoutX="14.0" layoutY="14.0" prefHeight="686.0" prefWidth="544.0" visible="true">
+              <children>
+                <Label layoutX="108.0" layoutY="61.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.388888888888889" fraction="0.5" topOpacity="0.007936507936507936">
+                      <input>
+                        <InnerShadow height="1.0" radius="0.0" width="0.0">
+                          <color>
+                            <Color blue="0.000" green="0.478" red="1.000" fx:id="x16" />
+                          </color>
+                        </InnerShadow>
+                      </input>
+                    </Reflection>
+                  </effect>
+                  <font>
+                    <Font size="16.0" fx:id="x9" />
+                  </font>
+                </Label>
+                <Label id="rezervasyonpzt1" fx:id="program1label" alignment="CENTER" layoutX="254.0" layoutY="69.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539">
+                          <color>
+                            <Color blue="0.384" green="0.000" red="0.400" fx:id="x17" />
+                          </color>
+                        </InnerShadow>
+                      </input>
+                    </Glow>
+                  </effect>
+                  <font>
+                    <Font name="Constantia" size="20.0" fx:id="x11" />
+                  </font>
+                </Label>
+                <Label font="$x9" layoutX="108.0" layoutY="142.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.6825396825396827" fraction="0.5" topOpacity="0.05555555555555555">
+                      <input>
+                        <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                      </input>
+                    </Reflection>
+                  </effect>
+                </Label>
+                <Label font="$x9" layoutX="108.0" layoutY="229.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.6825396825396827" fraction="0.5" topOpacity="0.05555555555555555">
+                      <input>
+                        <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                      </input>
+                    </Reflection>
+                  </effect>
+                </Label>
+                <Label font="$x9" layoutX="106.0" layoutY="445.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.6825396825396827" fraction="0.5" topOpacity="0.05555555555555555">
+                      <input>
+                        <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                      </input>
+                    </Reflection>
+                  </effect>
+                </Label>
+                <Label font="$x9" layoutX="106.0" layoutY="351.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.6825396825396827" fraction="0.51" topOpacity="0.05555555555555555">
+                      <input>
+                        <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                      </input>
+                    </Reflection>
+                  </effect>
+                </Label>
+                <Label font="$x9" layoutX="106.0" layoutY="525.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                  <effect>
+                    <Reflection bottomOpacity="0.6825396825396827" fraction="0.5" topOpacity="0.05555555555555555">
+                      <input>
+                        <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                      </input>
+                    </Reflection>
+                  </effect>
+                </Label>
+                <Label id="rezervasyonpzt2" fx:id="program2label" alignment="CENTER" font="$x11" layoutX="254.0" layoutY="150.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="#990093" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                      </input>
+                    </Glow>
+                  </effect>
+                </Label>
+                <Label id="rezervasyonpzt3" fx:id="program3label" alignment="CENTER" font="$x11" layoutX="254.0" layoutY="237.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="#8f00ff" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                      </input>
+                    </Glow>
+                  </effect>
+                </Label>
+                <Label id="rezervasyonpzt5" fx:id="program5label" alignment="CENTER" font="$x11" layoutX="254.0" layoutY="453.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="#390066" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                      </input>
+                    </Glow>
+                  </effect>
+                </Label>
+                <Label id="rezervasyonpzt6" fx:id="program6label" alignment="CENTER" font="$x11" layoutX="254.0" layoutY="533.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x17" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                      </input>
+                    </Glow>
+                  </effect>
+                </Label>
+                <Label id="rezervasyonpzt4" fx:id="program4label" alignment="CENTER" font="$x11" layoutX="254.0" layoutY="359.0" prefHeight="33.0" prefWidth="254.0" text="Label" wrapText="true">
+                  <effect>
+                    <Glow level="0.41320754716981134">
+                      <input>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="#7a0099" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                      </input>
+                    </Glow>
+                  </effect>
+                </Label>
+                <Label fx:id="programtarih" alignment="CENTER" contentDisplay="CENTER" font="$x8" layoutX="88.0" layoutY="14.0" prefHeight="49.0" prefWidth="406.0" text="09:00 - 10:00" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                  <effect>
+                    <InnerShadow color="#9e00ff" height="1.0" radius="0.0" width="0.0" />
+                  </effect>
+                </Label>
+              </children>
+            </Pane>
+            <Pane id="rezpzterrorpane" fx:id="programerrpanel" layoutX="28.0" layoutY="184.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+              <children>
+                <Label id="rezpzterrorlab" fx:id="programerrlabel" alignment="CENTER" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                  <effect>
+                    <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                  </effect>
+                  <font>
+                    <Font name="Calibri Bold Italic" size="25.0" fx:id="x5" />
+                  </font>
+                </Label>
+              </children>
+            </Pane>
+          </children>
+        </Pane>
+        <Pane fx:id="anarezervasyon" layoutX="0.0" layoutY="95.0" prefHeight="636.0" prefWidth="572.0" visible="false">
+          <children>
+            <Accordion layoutX="14.0" layoutY="14.0" prefWidth="544.0">
+              <expandedPane>
+                <TitledPane fx:id="rezervasyon1" animated="false" prefHeight="416.0" prefWidth="547.0" text="PAZARTESİ" wrapText="false">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="true">
+                      <children>
+                        <Pane fx:id="rezpztkatpane" layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="516.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="17.0" layoutY="11.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpzt1" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="19.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <color>
+                                    <Color blue="0.561" green="1.000" red="0.914" fx:id="x12" />
+                                  </color>
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539">
+                                          <color>
+                                            <Color blue="0.000" green="0.800" red="0.255" fx:id="x13" />
+                                          </color>
+                                        </InnerShadow>
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="90.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="168.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="90.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="11.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="168.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpzt2" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="98.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpzt3" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="176.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpzt5" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="98.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpzt6" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="176.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button id="rezervasyonpztbt" contentDisplay="CENTER" layoutX="141.0" layoutY="252.0" mnemonicParsing="false" onAction="#BirinciGun" prefHeight="60.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <color>
+                                    <Color blue="1.000" green="0.522" red="0.200" fx:id="x14" />
+                                  </color>
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                              <font>
+                                <Font name="System Bold Italic" size="30.0" fx:id="x15" />
+                              </font>
+                            </Button>
+                            <Label fx:id="rezervasyonpzt4" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="19.0" prefHeight="33.0" prefWidth="105.0" text="Label" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezpzterrpane" layoutX="14.0" layoutY="14.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezpzterrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.90683128720238" radius="49.45885067894345" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                  <font>
+                    <Font size="20.0" fx:id="x10" />
+                  </font>
+                </TitledPane>
+              </expandedPane>
+              <panes>
+                <fx:reference source="rezervasyon1" />
+                <TitledPane id="rezervasyon2" fx:id="rezervasyon22" animated="false" font="$x10" prefHeight="416.0000999999975" text="SALI">
+                  <content>
+                    <AnchorPane id="Content" fx:id="rezervasyon2" minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="540.0">
+                      <children>
+                        <Pane fx:id="rezsalkatpane" layoutX="14.0" layoutY="14.0" prefHeight="348.0000999999975" prefWidth="513.0000999999975" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="16.0" layoutY="6.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal1" alignment="CENTER" font="$x9" layoutX="120.0" layoutY="14.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="16.0" layoutY="85.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="16.0" layoutY="163.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="240.0" layoutY="85.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="240.0" layoutY="6.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="240.0" layoutY="163.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal2" alignment="CENTER" font="$x9" layoutX="120.0" layoutY="93.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal3" alignment="CENTER" font="$x9" layoutX="120.0" layoutY="171.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal4" alignment="CENTER" font="$x9" layoutX="367.0" layoutY="14.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal5" alignment="CENTER" font="$x9" layoutX="367.0" layoutY="93.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonsal6" alignment="CENTER" font="$x9" layoutX="367.0" layoutY="171.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button id="rezervasyonsalbt" contentDisplay="CENTER" font="$x15" layoutX="140.0" layoutY="259.0" minHeight="42.0" mnemonicParsing="false" onAction="#IkinciGun" prefHeight="58.0" prefWidth="191.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezsalerrpane" layoutX="13.0" layoutY="15.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezsalerrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane id="rezervasyon1" fx:id="rezervasyon3" animated="false" font="$x10" prefHeight="451.0" prefWidth="547.0" text="ÇARŞAMBA">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Pane fx:id="rezcrskatpane" layoutX="14.0" layoutY="14.0" prefHeight="385.0" prefWidth="516.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="17.0" layoutY="4.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncrs1" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="12.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="83.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="161.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="83.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="4.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="161.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label id="rezervasyoncrs1" fx:id="rezervasyoncrs2" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="91.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncrs3" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="169.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncrs4" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="12.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncrs5" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="91.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncrs6" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="169.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button id="rezervasyoncrsbt" contentDisplay="CENTER" font="$x15" layoutX="141.0" layoutY="275.0" mnemonicParsing="false" onAction="#UcuncuGun" prefHeight="70.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezcrserrpane" layoutX="13.0" layoutY="32.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezcrserrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="rezervasyon4" animated="false" font="$x10" prefHeight="453.0" prefWidth="547.0" text="PERŞEMBE">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Pane fx:id="rezprskatpane" layoutX="14.0" layoutY="14.0" prefHeight="387.0" prefWidth="516.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="17.0" layoutY="5.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs1" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="13.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="84.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="162.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="84.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="5.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="162.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs2" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="92.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs3" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="170.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs4" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="13.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs5" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="92.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonprs6" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="170.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button id="rezervasyonprsbt" contentDisplay="CENTER" font="$x15" layoutX="141.0" layoutY="276.0" mnemonicParsing="false" onAction="#DorduncuGun" prefHeight="70.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezprserrpane" layoutX="13.0" layoutY="33.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezprserrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="rezervasyon5" animated="false" font="$x10" prefHeight="448.0" prefWidth="547.0" text="CUMA">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Pane fx:id="rezcmkatpane" layoutX="14.0" layoutY="14.0" prefHeight="382.0" prefWidth="513.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="15.0" layoutY="3.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm1" alignment="CENTER" font="$x9" layoutX="119.0" layoutY="11.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="15.0" layoutY="82.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="15.0" layoutY="160.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="239.0" layoutY="82.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="239.0" layoutY="3.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="239.0" layoutY="160.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm2" alignment="CENTER" font="$x9" layoutX="119.0" layoutY="90.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm3" alignment="CENTER" font="$x9" layoutX="119.0" layoutY="168.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm4" alignment="CENTER" font="$x9" layoutX="366.0" layoutY="11.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm5" alignment="CENTER" font="$x9" layoutX="366.0" layoutY="90.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncm6" alignment="CENTER" font="$x9" layoutX="366.0" layoutY="168.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button fx:id="rezervasyoncmbt" contentDisplay="CENTER" font="$x15" layoutX="139.0" layoutY="274.0" mnemonicParsing="false" onAction="#BesinciGun" prefHeight="70.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezcmerrpane" layoutX="13.0" layoutY="30.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezcmerrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="rezervasyon6" animated="false" font="$x10" prefHeight="447.0" prefWidth="547.0" text="CUMARTESİ">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Pane fx:id="rezcmtkatpane" layoutX="14.0" layoutY="14.0" prefHeight="381.0" prefWidth="516.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="17.0" layoutY="2.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt1" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="10.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="81.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="159.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="81.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="2.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="159.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt2" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="89.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt3" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="167.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt4" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="10.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt5" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="89.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyoncmt6" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="167.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button fx:id="rezervasyoncmtbt" contentDisplay="CENTER" font="$x15" layoutX="141.0" layoutY="273.0" mnemonicParsing="false" onAction="#AltinciGun" prefHeight="70.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezcmterrpane" layoutX="13.0" layoutY="30.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezcmterrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92721266973587" radius="49.46394602457683" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="rezervasyon7" animated="false" font="$x10" prefHeight="449.0" prefWidth="547.0" text="PAZAR">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Pane fx:id="rezpzkatpane" layoutX="14.0" layoutY="14.0" prefHeight="380.0" prefWidth="516.0" visible="true">
+                          <children>
+                            <Label font="$x9" layoutX="17.0" layoutY="2.0" prefHeight="49.0" prefWidth="104.0" text="09:00 - 10:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.388888888888889" fraction="0.7936507936507937" topOpacity="0.007936507936507936">
+                                  <input>
+                                    <InnerShadow color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz1" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="11.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="81.0" prefHeight="49.0" prefWidth="104.0" text="10:00 - 11:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="17.0" layoutY="159.0" prefHeight="49.0" prefWidth="104.0" text="11:00 - 12:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="81.0" prefHeight="49.0" prefWidth="106.0" text="14:00 - 15:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="2.0" prefHeight="49.0" prefWidth="106.0" text="13:00 - 14:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label font="$x9" layoutX="241.0" layoutY="159.0" prefHeight="49.0" prefWidth="106.0" text="15:00 - 16:00" textOverrun="CENTER_ELLIPSIS">
+                              <effect>
+                                <Reflection bottomOpacity="0.6825396825396827" fraction="0.8650793650793651" topOpacity="0.05555555555555555">
+                                  <input>
+                                    <InnerShadow choke="0.20634920634920634" color="$x16" height="1.0" radius="0.0" width="0.0" />
+                                  </input>
+                                </Reflection>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz2" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="90.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz3" alignment="CENTER" font="$x9" layoutX="121.0" layoutY="168.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz4" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="10.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz5" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="89.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Label fx:id="rezervasyonpz6" alignment="CENTER" font="$x9" layoutX="368.0" layoutY="167.0" prefHeight="33.0" prefWidth="105.0" text="Label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <DropShadow blurType="TWO_PASS_BOX" color="$x12" height="83.4920634920635" radius="41.24603174603175" spread="0.09523809523809523" width="83.4920634920635">
+                                  <input>
+                                    <Glow level="0.41320754716981134">
+                                      <input>
+                                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.03968253968253968" color="$x13" height="71.39682539682539" radius="35.198412698412696" width="71.39682539682539" />
+                                      </input>
+                                    </Glow>
+                                  </input>
+                                </DropShadow>
+                              </effect>
+                            </Label>
+                            <Button fx:id="rezervasyonpzbt" contentDisplay="CENTER" font="$x15" layoutX="141.0" layoutY="273.0" mnemonicParsing="false" onAction="#YedinciGun" prefHeight="70.0" prefWidth="227.0" text="KAYDET" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                              <effect>
+                                <InnerShadow color="$x14" height="125.82539682539681" radius="62.412698412698404" width="125.82539682539681">
+                                  <input>
+                                    <Reflection />
+                                  </input>
+                                </InnerShadow>
+                              </effect>
+                            </Button>
+                          </children>
+                        </Pane>
+                        <Pane id="rezpzterrorpane" fx:id="rezpzerrpane" layoutX="13.0" layoutY="31.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+                          <children>
+                            <Label id="rezpzterrorlab" fx:id="rezpzerrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                              <effect>
+                                <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92313639322916" radius="49.46292695545014" width="99.92857142857143" />
+                              </effect>
+                            </Label>
+                          </children>
+                        </Pane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+          </children>
+        </Pane>
+        <Pane fx:id="anabugunpane" layoutX="0.0" layoutY="113.0" prefHeight="604.0" prefWidth="572.0" visible="false">
+          <children>
+            <Pane fx:id="bugunkaypane" layoutX="14.0" layoutY="14.0" prefHeight="576.0000999999975" prefWidth="544.0" visible="true">
+              <children>
+                <Pane layoutX="19.0" layoutY="340.0" prefHeight="94.0" prefWidth="488.0">
+                  <children>
+                    <Label layoutX="64.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="191.5078125" text="Calisma Saati">
+                      <font>
+                        <Font size="30.0" fx:id="x6" />
+                      </font>
+                    </Label>
+                    <TextField id="buguntarihtext" fx:id="buguncalismatext" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" cache="false" cacheHint="ROTATE" layoutX="267.0" layoutY="28.0" mouseTransparent="false" pickOnBounds="false" prefHeight="39.902252197265625" prefWidth="206.99990000000253" promptText="0" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;   -fx-font-color:#FFFFFF;&#10;}" text="0">
+                      <effect>
+                        <InnerShadow>
+                          <color>
+                            <Color blue="0.200" green="0.584" red="1.000" fx:id="x3" />
+                          </color>
+                          <input>
+                            <Reflection />
+                          </input>
+                        </InnerShadow>
+                      </effect>
+                    </TextField>
+                  </children>
+                </Pane>
+                <Pane layoutX="19.0" layoutY="75.0" prefHeight="94.0" prefWidth="488.0">
+                  <children>
+                    <Label font="$x6" layoutX="64.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="191.5078125" text="Kilo (kg)" />
+                    <TextField id="buguntarihtext" fx:id="bugunkilo" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" cache="false" cacheHint="ROTATE" editable="true" focusTraversable="true" layoutX="267.0" layoutY="28.0" mouseTransparent="false" pickOnBounds="false" prefHeight="39.90234375" prefWidth="206.99990000000253" promptText="0" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;   -fx-font-color:#FFFFFF;&#10;}" text="0">
+                      <effect>
+                        <InnerShadow color="$x3">
+                          <input>
+                            <Reflection />
+                          </input>
+                        </InnerShadow>
+                      </effect>
+                    </TextField>
+                  </children>
+                </Pane>
+                <Pane layoutX="19.0" layoutY="154.0" prefHeight="94.0" prefWidth="488.0">
+                  <children>
+                    <Label font="$x6" layoutX="64.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="191.5078125" text="Boy (cm)" />
+                    <TextField id="buguntarihtext" fx:id="bugunboytext" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" cache="false" cacheHint="ROTATE" layoutX="267.0" layoutY="28.0" mouseTransparent="false" pickOnBounds="false" prefHeight="39.902252197265625" prefWidth="206.99990000000253" promptText="0" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;   -fx-font-color:#FFFFFF;&#10;}" text="0">
+                      <effect>
+                        <InnerShadow color="$x3">
+                          <input>
+                            <Reflection />
+                          </input>
+                        </InnerShadow>
+                      </effect>
+                    </TextField>
+                  </children>
+                </Pane>
+                <Pane layoutX="19.0" layoutY="240.0" prefHeight="94.0" prefWidth="488.0">
+                  <children>
+                    <Label font="$x6" layoutX="64.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="191.5078125" text="Kosu (M)" />
+                    <TextField id="buguntarihtext" fx:id="bugunkosutext" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" cache="false" cacheHint="ROTATE" layoutX="267.0" layoutY="28.0" mouseTransparent="false" pickOnBounds="false" prefHeight="39.90234375" prefWidth="206.99990000000253" promptText="0" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;   -fx-font-color:#FFFFFF;&#10;}" text="0">
+                      <effect>
+                        <InnerShadow color="$x3">
+                          <input>
+                            <Reflection />
+                          </input>
+                        </InnerShadow>
+                      </effect>
+                    </TextField>
+                  </children>
+                </Pane>
+                <Button id="bugunkaydetbt" font="$x8" layoutX="129.0" layoutY="548.0" mnemonicParsing="false" onAction="#Save" prefHeight="45.9609375" prefWidth="312.0" text="Kaydet">
+                  <effect>
+                    <InnerShadow blurType="TWO_PASS_BOX" choke="0.11904761904761904" color="#96ff8d" height="87.52382135391235" radius="43.26190771943047" width="87.52380952380953" />
+                  </effect>
+                </Button>
+                <Pane layoutX="19.0" layoutY="-19.0" prefHeight="94.0" prefWidth="488.0">
+                  <children>
+                    <Label font="$x6" layoutX="64.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="191.5078125" text="Kalori" />
+                    <TextField id="buguntarihtext" fx:id="bugunkalori" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" cache="false" cacheHint="ROTATE" layoutX="267.0" layoutY="28.0" mouseTransparent="false" pickOnBounds="false" prefHeight="39.902252197265625" prefWidth="206.99990000000253" promptText="0" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;   -fx-font-color:#FFFFFF;&#10;}" text="0">
+                      <effect>
+                        <InnerShadow color="$x3">
+                          <input>
+                            <Reflection />
+                          </input>
+                        </InnerShadow>
+                      </effect>
+                    </TextField>
+                  </children>
+                </Pane>
+                <Pane id="hatapanel" fx:id="bugunhatapanel" layoutX="-14.0" layoutY="445.0" prefHeight="94.0" prefWidth="572.0">
+                  <children>
+                    <Label fx:id="bugunhata" alignment="CENTER" layoutX="0.0" layoutY="28.0" prefHeight="39.90234375" prefWidth="572.0" text="Kalori" textOverrun="CLIP">
+                      <effect>
+                        <InnerShadow color="RED" height="39.21428571428571" radius="14.553571428571427" />
+                      </effect>
+                      <font>
+                        <Font size="25.0" />
+                      </font>
+                    </Label>
+                  </children>
+                </Pane>
+              </children>
+            </Pane>
+            <Pane id="rezpzterrorpane" fx:id="bugunerrpane" layoutX="28.0" layoutY="129.0" prefHeight="347.0" prefWidth="516.0" visible="false">
+              <children>
+                <Label id="rezpzterrorlab" fx:id="bugunerrlabel" alignment="CENTER" font="$x5" layoutX="48.0" layoutY="67.0" prefHeight="188.9609375" prefWidth="405.0" text="label" textAlignment="CENTER" wrapText="true">
+                  <effect>
+                    <InnerShadow blurType="TWO_PASS_BOX" color="RED" height="99.92313639322916" radius="49.46292695545014" width="99.92857142857143" />
+                  </effect>
+                </Label>
+              </children>
+            </Pane>
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+    <Pane fx:id="girispane" layoutX="14.0" layoutY="14.0" prefHeight="731.0" prefWidth="573.0" style="" visible="true">
+      <children>
+        <Label disable="false" font="$x8" layoutX="88.0" layoutY="390.0" prefHeight="48.000099999997474" prefWidth="145.0" text="Kullanıcı Adı :" textAlignment="LEFT" textOverrun="CLIP">
+          <effect>
+            <Lighting diffuseConstant="1.1111111111111112" specularConstant="0.4746031746031746" specularExponent="25.396825396825395" surfaceScale="3.2460317460317456">
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <contentInput>
+                <InnerShadow blurType="GAUSSIAN" choke="0.4523809523809524" height="75.64285690160024" radius="37.32142851111435" width="75.64285714285714">
+                  <color>
+                    <Color blue="0.000" green="0.192" red="0.800" fx:id="x1" />
+                  </color>
+                </InnerShadow>
+              </contentInput>
+              <light>
+                <javafx.scene.effect.Light.Distant>
+                  <color>
+                    <Color blue="0.839" green="0.839" red="1.000" fx:id="x2" />
+                  </color>
+                </javafx.scene.effect.Light.Distant>
+              </light>
+            </Lighting>
+          </effect>
+        </Label>
+        <Label font="$x8" layoutX="88.0" layoutY="457.0" prefHeight="42.0" prefWidth="145.0" text="Şifre :">
+          <effect>
+            <Lighting diffuseConstant="1.1111111111111112" specularConstant="0.4746031746031746" specularExponent="25.396825396825395" surfaceScale="3.2460317460317456">
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <contentInput>
+                <InnerShadow blurType="GAUSSIAN" choke="0.4523809523809524" color="$x1" height="75.64285690160024" radius="37.32142851111435" width="75.64285714285714" />
+              </contentInput>
+              <light>
+                <javafx.scene.effect.Light.Distant color="$x2" />
+              </light>
+            </Lighting>
+          </effect>
+        </Label>
+        <TextField fx:id="giriskullaniciAdi" blendMode="GREEN" layoutX="249.0" layoutY="390.0" prefHeight="47.9999915527369" prefWidth="230.00009999999747" promptText="Kullanıcı Adı" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;}" />
+        <Button fx:id="giristamam" blendMode="SRC_OVER" cache="false" cacheHint="DEFAULT" cancelButton="false" contentDisplay="BOTTOM" defaultButton="false" ellipsisString="4" focusTraversable="false" graphicTextGap="8.0" layoutX="88.0" layoutY="620.0" minHeight="29.9609375" mnemonicParsing="false" onAction="#openGiris" prefHeight="72.96103749999747" prefWidth="391.0001220703125" style="#shiny-orange {&#10;    -fx-background-color: &#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill: #654b00;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 14px;&#10;    -fx-padding: 10 20 10 20;&#10;}" text="Tamam" textAlignment="CENTER" textOverrun="CLIP" underline="false" wrapText="true">
+          <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" color="#d633ff" />
+          </effect>
+        </Button>
+        <PasswordField fx:id="girissifre" layoutX="249.0" layoutY="451.0" prefHeight="47.9999915527369" prefWidth="230.0001220703125" promptText="*******" style="#textField {&#10;  -fx-background-image:url('http://icons.iconarchive.com/icons/rockettheme/halloween/32/pumpkin-icon.png');&#10;  -fx-background-repeat: no-repeat;&#10;  -fx-background-position: right center;&#10;  -fx-font-size: 20;&#10;}" />
+        <ImageView fx:id="grisiimage" disable="true" fitHeight="361.6693513015901" fitWidth="398.8503112792969" focusTraversable="true" layoutX="99.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../../../../../../../a.jpg" />
+          </image>
+        </ImageView>
+        <Label fx:id="giriserrorlabel" alignment="CENTER" contentDisplay="BOTTOM" layoutX="99.0" layoutY="524.0" prefHeight="49.9609375" prefWidth="379.0" text="Kullanıcı Adı veya Şifre Hatalı" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" underline="false" visible="false">
+          <effect>
+            <InnerShadow color="RED">
+              <input>
+                <Reflection />
+              </input>
+            </InnerShadow>
+          </effect>
+          <font>
+            <Font name="Cambria Bold Italic" size="20.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <Pane fx:id="beklemepanel" layoutX="158.0" layoutY="336.0" prefHeight="234.0" prefWidth="275.0" visible="false">
+      <children>
+        <Label contentDisplay="CENTER" layoutX="33.0" layoutY="82.0" prefHeight="65.9609375" prefWidth="210.0" text="Lütfen Bekleyiniz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+          <effect>
+            <SepiaTone level="0.4968553459119498">
+              <input>
+                <Glow level="0.3691823899371069">
+                  <input>
+                    <ColorAdjust brightness="-0.36641221374045796" hue="0.12213740458015265" saturation="0.4274809160305344">
+                      <input>
+                        <InnerShadow choke="0.6031746031746031" color="#22ccb4" height="113.73015873015873" radius="56.36507936507937" width="113.73015873015873" />
+                      </input>
+                    </ColorAdjust>
+                  </input>
+                </Glow>
+              </input>
+            </SepiaTone>
+          </effect>
+          <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <Pane layoutX="14.0" layoutY="14.0" prefHeight="731.0" prefWidth="572.0" visible="false">
+      <children>
+        <Pane layoutX="24.0" layoutY="14.0" prefHeight="703.0" prefWidth="520.0">
+          <children>
+            <Accordion layoutX="14.0" layoutY="14.0" prefWidth="492.0">
+              <expandedPane>
+                <TitledPane fx:id="x4" animated="false" prefHeight="279.0" prefWidth="492.0" text="untitled">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TextField layoutX="201.0" layoutY="23.0" prefWidth="249.0" />
+                        <TextField layoutX="201.0" layoutY="54.0" prefWidth="252.0" />
+                        <TextField layoutX="201.0" layoutY="90.0" prefWidth="255.0" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+              </expandedPane>
+              <panes>
+                <TitledPane animated="false" text="untitled">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="651.0" prefWidth="488.0">
+                      <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="359.0" prefWidth="460.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Column X" />
+                            <TableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+                <fx:reference source="x4" />
+              </panes>
+            </Accordion>
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
