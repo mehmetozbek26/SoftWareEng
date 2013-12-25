@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dcda7928e34445b393a4cd4b216dc119" Name="Diagram1">
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.Admin" Width="1.5" PointX="3.407925815977122" PointY="12.094147836833329" />
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.Kategori" Width="1.5" PointX="4.7556444056125562" PointY="10.4415320951685" />
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.KisiBilgileri" Width="1.5" PointX="1.7409699325174883" PointY="27.59347030315244" />
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.Kullanici" Width="1.5" PointX="10.369374330327554" PointY="11.941226249533345" />
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.Program" Width="1.5" PointX="8.6195630713457074" PointY="24.91254490283902" />
+        <EntityTypeShape EntityType="SoftwareSporSalonuModel.Rezervasyon" Width="1.5" PointX="10.267750180451083" PointY="1.8641921290495396" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID1" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID2" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID3" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID4" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID5" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.KategoriID6" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.FK_KisiBilgileri_Kullanici" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.FKTC" />
+        <AssociationConnector Association="SoftwareSporSalonuModel.FKTarih" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

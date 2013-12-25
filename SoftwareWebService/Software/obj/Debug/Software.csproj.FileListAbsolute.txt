@@ -1,0 +1,14 @@
+C:\Users\MERKAN\Desktop\Software\Software\bin\Software.dll
+C:\Users\MERKAN\Desktop\Software\Software\bin\Software.pdb
+C:\Users\MERKAN\Desktop\Software\Software\bin\EntityFramework.dll
+C:\Users\MERKAN\Desktop\Software\Software\bin\EntityFramework.xml
+C:\Users\MERKAN\Desktop\Software\Software\obj\Debug\Software.csprojResolveAssemblyReference.cache
+C:\Users\MERKAN\Desktop\Software\Software\obj\Debug\Software.dll
+C:\Users\MERKAN\Desktop\Software\Software\obj\Debug\Software.pdb
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\obj\Debug\Software.dll
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\bin\Software.dll
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\bin\Software.pdb
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\bin\EntityFramework.dll
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\bin\EntityFramework.xml
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\obj\Debug\Software.pdb
+C:\Users\MERKAN\Desktop\SOFTWARE PROGRAM\SoftwareWebService\Software\obj\Debug\Software.csprojResolveAssemblyReference.cache

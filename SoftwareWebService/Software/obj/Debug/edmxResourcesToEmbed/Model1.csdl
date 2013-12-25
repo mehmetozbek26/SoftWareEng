@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoftwareSporSalonuModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SoftwareSporSalonuEntities" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="RezervasyonYap">
+      <Parameter Name="tarih" Mode="In" Type="DateTime" />
+      <Parameter Name="tc" Mode="In" Type="String" />
+      <Parameter Name="reztarih" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="Admin" EntityType="SoftwareSporSalonuModel.Admin" />
+    <EntitySet Name="Kategori" EntityType="SoftwareSporSalonuModel.Kategori" />
+    <EntitySet Name="KisiBilgileri" EntityType="SoftwareSporSalonuModel.KisiBilgileri" />
+    <EntitySet Name="Kullanici" EntityType="SoftwareSporSalonuModel.Kullanici" />
+    <EntitySet Name="Program" EntityType="SoftwareSporSalonuModel.Program" />
+    <EntitySet Name="Rezervasyon" EntityType="SoftwareSporSalonuModel.Rezervasyon" />
+    <AssociationSet Name="KategoriID1" Association="SoftwareSporSalonuModel.KategoriID1">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID2" Association="SoftwareSporSalonuModel.KategoriID2">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID3" Association="SoftwareSporSalonuModel.KategoriID3">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID4" Association="SoftwareSporSalonuModel.KategoriID4">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID5" Association="SoftwareSporSalonuModel.KategoriID5">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID6" Association="SoftwareSporSalonuModel.KategoriID6">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KisiBilgileri_Kullanici" Association="SoftwareSporSalonuModel.FK_KisiBilgileri_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KisiBilgileri" EntitySet="KisiBilgileri" />
+    </AssociationSet>
+    <AssociationSet Name="FKTC" Association="SoftwareSporSalonuModel.FKTC">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+    <AssociationSet Name="FKTarih" Association="SoftwareSporSalonuModel.FKTarih">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="KullaniciAdi" />
+    </Key>
+    <Property Type="String" Name="KullaniciAdi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="KullaniciSifre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Type="Int32" Name="KategoriId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="KategoriAdi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="KategoriKapasite" Nullable="false" />
+    <NavigationProperty Name="Program" Relationship="SoftwareSporSalonuModel.KategoriID1" FromRole="Kategori" ToRole="Program" />
+    <NavigationProperty Name="Program1" Relationship="SoftwareSporSalonuModel.KategoriID2" FromRole="Kategori" ToRole="Program" />
+    <NavigationProperty Name="Program2" Relationship="SoftwareSporSalonuModel.KategoriID3" FromRole="Kategori" ToRole="Program" />
+    <NavigationProperty Name="Program3" Relationship="SoftwareSporSalonuModel.KategoriID4" FromRole="Kategori" ToRole="Program" />
+    <NavigationProperty Name="Program4" Relationship="SoftwareSporSalonuModel.KategoriID5" FromRole="Kategori" ToRole="Program" />
+    <NavigationProperty Name="Program5" Relationship="SoftwareSporSalonuModel.KategoriID6" FromRole="Kategori" ToRole="Program" />
+  </EntityType>
+  <EntityType Name="KisiBilgileri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TC" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Tarih" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="Kilo" Nullable="false" />
+    <Property Type="Int32" Name="Boy" Nullable="false" />
+    <Property Type="Int32" Name="Kalori" Nullable="false" />
+    <Property Type="Int32" Name="Kosu" Nullable="false" />
+    <Property Type="Int32" Name="CalismaSaati" Nullable="false" />
+    <NavigationProperty Name="Kullanici" Relationship="SoftwareSporSalonuModel.FK_KisiBilgileri_Kullanici" FromRole="KisiBilgileri" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="TC" />
+    </Key>
+    <Property Type="String" Name="TC" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sifre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Adi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Soyadi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Yas" Precision="0" />
+    <NavigationProperty Name="KisiBilgileri" Relationship="SoftwareSporSalonuModel.FK_KisiBilgileri_Kullanici" FromRole="Kullanici" ToRole="KisiBilgileri" />
+    <NavigationProperty Name="Rezervasyon" Relationship="SoftwareSporSalonuModel.FKTC" FromRole="Kullanici" ToRole="Rezervasyon" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="Tarih" />
+    </Key>
+    <Property Type="DateTime" Name="Tarih" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="Ders1" Nullable="false" />
+    <Property Type="Int32" Name="Ders2" Nullable="false" />
+    <Property Type="Int32" Name="Ders3" Nullable="false" />
+    <Property Type="Int32" Name="Ders4" Nullable="false" />
+    <Property Type="Int32" Name="Ders5" Nullable="false" />
+    <Property Type="Int32" Name="Ders6" Nullable="false" />
+    <Property Type="Int32" Name="Kapasite" Nullable="false" />
+    <NavigationProperty Name="Kategori" Relationship="SoftwareSporSalonuModel.KategoriID1" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Kategori1" Relationship="SoftwareSporSalonuModel.KategoriID2" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Kategori2" Relationship="SoftwareSporSalonuModel.KategoriID3" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Kategori3" Relationship="SoftwareSporSalonuModel.KategoriID4" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Kategori4" Relationship="SoftwareSporSalonuModel.KategoriID5" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Kategori5" Relationship="SoftwareSporSalonuModel.KategoriID6" FromRole="Program" ToRole="Kategori" />
+    <NavigationProperty Name="Rezervasyon" Relationship="SoftwareSporSalonuModel.FKTarih" FromRole="Program" ToRole="Rezervasyon" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Tarih" Nullable="false" Precision="0" />
+    <Property Type="String" Name="TC" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="RezervasyonTarihi" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Kullanici" Relationship="SoftwareSporSalonuModel.FKTC" FromRole="Rezervasyon" ToRole="Kullanici" />
+    <NavigationProperty Name="Program" Relationship="SoftwareSporSalonuModel.FKTarih" FromRole="Rezervasyon" ToRole="Program" />
+  </EntityType>
+  <Association Name="KategoriID1">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID2">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID3">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID4">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID5">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID6">
+    <End Type="SoftwareSporSalonuModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KisiBilgileri_Kullanici">
+    <End Type="SoftwareSporSalonuModel.Kullanici" Role="Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SoftwareSporSalonuModel.KisiBilgileri" Role="KisiBilgileri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="TC" />
+      </Principal>
+      <Dependent Role="KisiBilgileri">
+        <PropertyRef Name="TC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTC">
+    <End Type="SoftwareSporSalonuModel.Kullanici" Role="Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SoftwareSporSalonuModel.Rezervasyon" Role="Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="TC" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="TC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTarih">
+    <End Type="SoftwareSporSalonuModel.Program" Role="Program" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SoftwareSporSalonuModel.Rezervasyon" Role="Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Tarih" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="Tarih" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

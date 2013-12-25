@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoftwareSporSalonuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SoftwareSporSalonuModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="SoftwareSporSalonuModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kategori" EntityType="SoftwareSporSalonuModel.Store.Kategori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KisiBilgileri" EntityType="SoftwareSporSalonuModel.Store.KisiBilgileri" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kullanici" EntityType="SoftwareSporSalonuModel.Store.Kullanici" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Program" EntityType="SoftwareSporSalonuModel.Store.Program" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rezervasyon" EntityType="SoftwareSporSalonuModel.Store.Rezervasyon" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_KisiBilgileri_Kullanici" Association="SoftwareSporSalonuModel.Store.FK_KisiBilgileri_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KisiBilgileri" EntitySet="KisiBilgileri" />
+    </AssociationSet>
+    <AssociationSet Name="FKTarih" Association="SoftwareSporSalonuModel.Store.FKTarih">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+    <AssociationSet Name="FKTC" Association="SoftwareSporSalonuModel.Store.FKTC">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID1" Association="SoftwareSporSalonuModel.Store.KategoriID1">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID2" Association="SoftwareSporSalonuModel.Store.KategoriID2">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID3" Association="SoftwareSporSalonuModel.Store.KategoriID3">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID4" Association="SoftwareSporSalonuModel.Store.KategoriID4">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID5" Association="SoftwareSporSalonuModel.Store.KategoriID5">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+    <AssociationSet Name="KategoriID6" Association="SoftwareSporSalonuModel.Store.KategoriID6">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="KullaniciAdi" />
+    </Key>
+    <Property Name="KullaniciAdi" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="KullaniciSifre" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Name="KategoriId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAdi" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="KategoriKapasite" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KisiBilgileri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TC" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="Tarih" Type="date" Nullable="false" />
+    <Property Name="Kilo" Type="int" Nullable="false" />
+    <Property Name="Boy" Type="int" Nullable="false" />
+    <Property Name="Kalori" Type="int" Nullable="false" />
+    <Property Name="Kosu" Type="int" Nullable="false" />
+    <Property Name="CalismaSaati" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="TC" />
+    </Key>
+    <Property Name="TC" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="Sifre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yas" Type="date" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="Tarih" />
+    </Key>
+    <Property Name="Tarih" Type="date" Nullable="false" />
+    <Property Name="Ders1" Type="int" Nullable="false" />
+    <Property Name="Ders2" Type="int" Nullable="false" />
+    <Property Name="Ders3" Type="int" Nullable="false" />
+    <Property Name="Ders4" Type="int" Nullable="false" />
+    <Property Name="Ders5" Type="int" Nullable="false" />
+    <Property Name="Ders6" Type="int" Nullable="false" />
+    <Property Name="Kapasite" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Tarih" Type="date" Nullable="false" />
+    <Property Name="TC" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="RezervasyonTarihi" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_KisiBilgileri_Kullanici">
+    <End Role="Kullanici" Type="SoftwareSporSalonuModel.Store.Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KisiBilgileri" Type="SoftwareSporSalonuModel.Store.KisiBilgileri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="TC" />
+      </Principal>
+      <Dependent Role="KisiBilgileri">
+        <PropertyRef Name="TC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTarih">
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervasyon" Type="SoftwareSporSalonuModel.Store.Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Tarih" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="Tarih" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTC">
+    <End Role="Kullanici" Type="SoftwareSporSalonuModel.Store.Kullanici" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rezervasyon" Type="SoftwareSporSalonuModel.Store.Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="TC" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="TC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID1">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID2">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID3">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID4">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID5">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KategoriID6">
+    <End Role="Kategori" Type="SoftwareSporSalonuModel.Store.Kategori" Multiplicity="1" />
+    <End Role="Program" Type="SoftwareSporSalonuModel.Store.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="Ders6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="RezervasyonYap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tarih" Type="date" Mode="In" />
+    <Parameter Name="tc" Type="nvarchar" Mode="In" />
+    <Parameter Name="reztarih" Type="date" Mode="In" />
+  </Function>
+</Schema>

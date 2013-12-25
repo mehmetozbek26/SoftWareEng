@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SoftwareSporSalonuModelStoreContainer" CdmEntityContainer="SoftwareSporSalonuEntities">
+    <FunctionImportMapping FunctionImportName="RezervasyonYap" FunctionName="SoftwareSporSalonuModel.Store.RezervasyonYap" />
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="KategoriKapasite" ColumnName="KategoriKapasite" />
+          <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+          <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KisiBilgileri">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.KisiBilgileri">
+        <MappingFragment StoreEntitySet="KisiBilgileri">
+          <ScalarProperty Name="CalismaSaati" ColumnName="CalismaSaati" />
+          <ScalarProperty Name="Kosu" ColumnName="Kosu" />
+          <ScalarProperty Name="Kalori" ColumnName="Kalori" />
+          <ScalarProperty Name="Boy" ColumnName="Boy" />
+          <ScalarProperty Name="Kilo" ColumnName="Kilo" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Program">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.Program">
+        <MappingFragment StoreEntitySet="Program">
+          <ScalarProperty Name="Kapasite" ColumnName="Kapasite" />
+          <ScalarProperty Name="Ders6" ColumnName="Ders6" />
+          <ScalarProperty Name="Ders5" ColumnName="Ders5" />
+          <ScalarProperty Name="Ders4" ColumnName="Ders4" />
+          <ScalarProperty Name="Ders3" ColumnName="Ders3" />
+          <ScalarProperty Name="Ders2" ColumnName="Ders2" />
+          <ScalarProperty Name="Ders1" ColumnName="Ders1" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervasyon">
+      <EntityTypeMapping TypeName="SoftwareSporSalonuModel.Rezervasyon">
+        <MappingFragment StoreEntitySet="Rezervasyon">
+          <ScalarProperty Name="RezervasyonTarihi" ColumnName="RezervasyonTarihi" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
