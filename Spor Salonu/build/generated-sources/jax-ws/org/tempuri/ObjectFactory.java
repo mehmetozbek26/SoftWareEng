@@ -26,16 +26,16 @@ import org.datacontract.schemas._2004._07.software.ProgramDersDB;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _BugunRezervasyonYapilmismiUsername_QNAME = new QName("http://tempuri.org/", "username");
+    private final static QName _BugunRezervasyonYapilmismiTarih_QNAME = new QName("http://tempuri.org/", "tarih");
+    private final static QName _BugunRezervasyonYapilmismiUserpass_QNAME = new QName("http://tempuri.org/", "userpass");
+    private final static QName _BirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult_QNAME = new QName("http://tempuri.org/", "BirSonrakiProgramiBulResult");
+    private final static QName _KisiselBilgilerResponseKisiselBilgilerResult_QNAME = new QName("http://tempuri.org/", "KisiselBilgilerResult");
     private final static QName _ProgramGetByIdKuladi_QNAME = new QName("http://tempuri.org/", "kuladi");
     private final static QName _ProgramGetByIdSifre_QNAME = new QName("http://tempuri.org/", "sifre");
-    private final static QName _ProgramGetByIdTarih_QNAME = new QName("http://tempuri.org/", "tarih");
-    private final static QName _KisiselBilgiEkleResponseKisiselBilgiEkleResult_QNAME = new QName("http://tempuri.org/", "KisiselBilgiEkleResult");
-    private final static QName _BirSonrakiProgramiBulUsername_QNAME = new QName("http://tempuri.org/", "username");
-    private final static QName _BirSonrakiProgramiBulUserpass_QNAME = new QName("http://tempuri.org/", "userpass");
-    private final static QName _ProgramGetByIdResponseProgramGetByIdResult_QNAME = new QName("http://tempuri.org/", "ProgramGetByIdResult");
     private final static QName _RezervasyonYapRezTarihi_QNAME = new QName("http://tempuri.org/", "rezTarihi");
-    private final static QName _KisiselBilgilerResponseKisiselBilgilerResult_QNAME = new QName("http://tempuri.org/", "KisiselBilgilerResult");
-    private final static QName _BirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult_QNAME = new QName("http://tempuri.org/", "BirSonrakiProgramiBulResult");
+    private final static QName _KisiselBilgiEkleResponseKisiselBilgiEkleResult_QNAME = new QName("http://tempuri.org/", "KisiselBilgiEkleResult");
+    private final static QName _ProgramGetByIdResponseProgramGetByIdResult_QNAME = new QName("http://tempuri.org/", "ProgramGetByIdResult");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.tempuri
@@ -160,6 +160,51 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = BugunRezervasyonYapilmismi.class)
+    public JAXBElement<String> createBugunRezervasyonYapilmismiUsername(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUsername_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = BugunRezervasyonYapilmismi.class)
+    public JAXBElement<String> createBugunRezervasyonYapilmismiTarih(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiTarih_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = BugunRezervasyonYapilmismi.class)
+    public JAXBElement<String> createBugunRezervasyonYapilmismiUserpass(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUserpass_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProgramDersDB }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "BirSonrakiProgramiBulResult", scope = BirSonrakiProgramiBulResponse.class)
+    public JAXBElement<ProgramDersDB> createBirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult(ProgramDersDB value) {
+        return new JAXBElement<ProgramDersDB>(_BirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult_QNAME, ProgramDersDB.class, BirSonrakiProgramiBulResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfKisiBilgileriDB }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "KisiselBilgilerResult", scope = KisiselBilgilerResponse.class)
+    public JAXBElement<ArrayOfKisiBilgileriDB> createKisiselBilgilerResponseKisiselBilgilerResult(ArrayOfKisiBilgileriDB value) {
+        return new JAXBElement<ArrayOfKisiBilgileriDB>(_KisiselBilgilerResponseKisiselBilgilerResult_QNAME, ArrayOfKisiBilgileriDB.class, KisiselBilgilerResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "kuladi", scope = ProgramGetById.class)
     public JAXBElement<String> createProgramGetByIdKuladi(String value) {
         return new JAXBElement<String>(_ProgramGetByIdKuladi_QNAME, String.class, ProgramGetById.class, value);
@@ -180,52 +225,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = ProgramGetById.class)
     public JAXBElement<String> createProgramGetByIdTarih(String value) {
-        return new JAXBElement<String>(_ProgramGetByIdTarih_QNAME, String.class, ProgramGetById.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "KisiselBilgiEkleResult", scope = KisiselBilgiEkleResponse.class)
-    public JAXBElement<String> createKisiselBilgiEkleResponseKisiselBilgiEkleResult(String value) {
-        return new JAXBElement<String>(_KisiselBilgiEkleResponseKisiselBilgiEkleResult_QNAME, String.class, KisiselBilgiEkleResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = BirSonrakiProgramiBul.class)
-    public JAXBElement<String> createBirSonrakiProgramiBulUsername(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUsername_QNAME, String.class, BirSonrakiProgramiBul.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = BirSonrakiProgramiBul.class)
-    public JAXBElement<String> createBirSonrakiProgramiBulTarih(String value) {
-        return new JAXBElement<String>(_ProgramGetByIdTarih_QNAME, String.class, BirSonrakiProgramiBul.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = BirSonrakiProgramiBul.class)
-    public JAXBElement<String> createBirSonrakiProgramiBulUserpass(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUserpass_QNAME, String.class, BirSonrakiProgramiBul.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProgramDersDB }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "ProgramGetByIdResult", scope = ProgramGetByIdResponse.class)
-    public JAXBElement<ProgramDersDB> createProgramGetByIdResponseProgramGetByIdResult(ProgramDersDB value) {
-        return new JAXBElement<ProgramDersDB>(_ProgramGetByIdResponseProgramGetByIdResult_QNAME, ProgramDersDB.class, ProgramGetByIdResponse.class, value);
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiTarih_QNAME, String.class, ProgramGetById.class, value);
     }
 
     /**
@@ -252,34 +252,88 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = KisiselBilgiEkle.class)
     public JAXBElement<String> createKisiselBilgiEkleTarih(String value) {
-        return new JAXBElement<String>(_ProgramGetByIdTarih_QNAME, String.class, KisiselBilgiEkle.class, value);
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiTarih_QNAME, String.class, KisiselBilgiEkle.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = BugunRezervasyonYapilmismi.class)
-    public JAXBElement<String> createBugunRezervasyonYapilmismiUsername(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUsername_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = RezervasyonYap.class)
+    public JAXBElement<String> createRezervasyonYapUsername(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUsername_QNAME, String.class, RezervasyonYap.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = BugunRezervasyonYapilmismi.class)
-    public JAXBElement<String> createBugunRezervasyonYapilmismiTarih(String value) {
-        return new JAXBElement<String>(_ProgramGetByIdTarih_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "rezTarihi", scope = RezervasyonYap.class)
+    public JAXBElement<String> createRezervasyonYapRezTarihi(String value) {
+        return new JAXBElement<String>(_RezervasyonYapRezTarihi_QNAME, String.class, RezervasyonYap.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = BugunRezervasyonYapilmismi.class)
-    public JAXBElement<String> createBugunRezervasyonYapilmismiUserpass(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUserpass_QNAME, String.class, BugunRezervasyonYapilmismi.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = RezervasyonYap.class)
+    public JAXBElement<String> createRezervasyonYapTarih(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiTarih_QNAME, String.class, RezervasyonYap.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = RezervasyonYap.class)
+    public JAXBElement<String> createRezervasyonYapUserpass(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUserpass_QNAME, String.class, RezervasyonYap.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "KisiselBilgiEkleResult", scope = KisiselBilgiEkleResponse.class)
+    public JAXBElement<String> createKisiselBilgiEkleResponseKisiselBilgiEkleResult(String value) {
+        return new JAXBElement<String>(_KisiselBilgiEkleResponseKisiselBilgiEkleResult_QNAME, String.class, KisiselBilgiEkleResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = BirSonrakiProgramiBul.class)
+    public JAXBElement<String> createBirSonrakiProgramiBulUsername(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUsername_QNAME, String.class, BirSonrakiProgramiBul.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = BirSonrakiProgramiBul.class)
+    public JAXBElement<String> createBirSonrakiProgramiBulTarih(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiTarih_QNAME, String.class, BirSonrakiProgramiBul.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = BirSonrakiProgramiBul.class)
+    public JAXBElement<String> createBirSonrakiProgramiBulUserpass(String value) {
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUserpass_QNAME, String.class, BirSonrakiProgramiBul.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProgramDersDB }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "ProgramGetByIdResult", scope = ProgramGetByIdResponse.class)
+    public JAXBElement<ProgramDersDB> createProgramGetByIdResponseProgramGetByIdResult(ProgramDersDB value) {
+        return new JAXBElement<ProgramDersDB>(_ProgramGetByIdResponseProgramGetByIdResult_QNAME, ProgramDersDB.class, ProgramGetByIdResponse.class, value);
     }
 
     /**
@@ -304,54 +358,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = RezervasyonYap.class)
-    public JAXBElement<String> createRezervasyonYapUsername(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUsername_QNAME, String.class, RezervasyonYap.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "rezTarihi", scope = RezervasyonYap.class)
-    public JAXBElement<String> createRezervasyonYapRezTarihi(String value) {
-        return new JAXBElement<String>(_RezervasyonYapRezTarihi_QNAME, String.class, RezervasyonYap.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "tarih", scope = RezervasyonYap.class)
-    public JAXBElement<String> createRezervasyonYapTarih(String value) {
-        return new JAXBElement<String>(_ProgramGetByIdTarih_QNAME, String.class, RezervasyonYap.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = RezervasyonYap.class)
-    public JAXBElement<String> createRezervasyonYapUserpass(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUserpass_QNAME, String.class, RezervasyonYap.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfKisiBilgileriDB }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "KisiselBilgilerResult", scope = KisiselBilgilerResponse.class)
-    public JAXBElement<ArrayOfKisiBilgileriDB> createKisiselBilgilerResponseKisiselBilgilerResult(ArrayOfKisiBilgileriDB value) {
-        return new JAXBElement<ArrayOfKisiBilgileriDB>(_KisiselBilgilerResponseKisiselBilgilerResult_QNAME, ArrayOfKisiBilgileriDB.class, KisiselBilgilerResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = UserControl.class)
     public JAXBElement<String> createUserControlUsername(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUsername_QNAME, String.class, UserControl.class, value);
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUsername_QNAME, String.class, UserControl.class, value);
     }
 
     /**
@@ -360,16 +369,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "userpass", scope = UserControl.class)
     public JAXBElement<String> createUserControlUserpass(String value) {
-        return new JAXBElement<String>(_BirSonrakiProgramiBulUserpass_QNAME, String.class, UserControl.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProgramDersDB }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "BirSonrakiProgramiBulResult", scope = BirSonrakiProgramiBulResponse.class)
-    public JAXBElement<ProgramDersDB> createBirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult(ProgramDersDB value) {
-        return new JAXBElement<ProgramDersDB>(_BirSonrakiProgramiBulResponseBirSonrakiProgramiBulResult_QNAME, ProgramDersDB.class, BirSonrakiProgramiBulResponse.class, value);
+        return new JAXBElement<String>(_BugunRezervasyonYapilmismiUserpass_QNAME, String.class, UserControl.class, value);
     }
 
 }

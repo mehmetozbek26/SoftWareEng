@@ -538,12 +538,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, tempday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, tempday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+            rezpztkatpane.setVisible(false);
+            rezpzterrpane.setVisible(true);
+            rezpzterrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz"); 
         }
     }
     @FXML protected void IkinciGun(ActionEvent event)
@@ -559,12 +562,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+            rezsalkatpane.setVisible(false);
+            rezsalerrpane.setVisible(true);
+            rezsalerrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz"); 
         }
     }
     @FXML protected void UcuncuGun(ActionEvent event)
@@ -580,12 +586,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+            rezcrskatpane.setVisible(false);
+            rezcrserrpane.setVisible(true);
+            rezcrserrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz");
         }
     }
     @FXML protected void DorduncuGun(ActionEvent event)
@@ -601,12 +610,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+             rezprskatpane.setVisible(false);
+            rezprserrpane.setVisible(true);
+            rezprserrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz");
         }
     }
     @FXML protected void BesinciGun(ActionEvent event)
@@ -622,12 +634,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+             rezcmkatpane.setVisible(false);
+            rezcmerrpane.setVisible(true);
+            rezcmerrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz");
         }
     }
     @FXML protected void AltinciGun(ActionEvent event)
@@ -643,12 +658,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+             rezcmtkatpane.setVisible(false);
+            rezcmterrpane.setVisible(true);
+            rezcmterrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz");
         }
     }
     @FXML protected void YedinciGun(ActionEvent event)
@@ -664,12 +682,15 @@ public class FXMLDocumentController implements Initializable {
             tomorrow = c.getTime();
             tempday = dateFormat.format(tomorrow);
             ((BindingProvider)port).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, servis);
-            port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday);
+            if(!port.rezervasyonYap(par.getKullaniciAdi(), par.getKullaniciSifre(), tempday, currentday))
+                throw  new Exception();
                 
         }
         catch(Exception err)
         {
-            
+             rezpzkatpane.setVisible(false);
+            rezpzerrpane.setVisible(true);
+            rezpzerrlabel.setText("Hata Oluştu Lütfen Yetkili Kişiye Bildiriniz");
         }
     }
     @FXML protected void openBugunScene(ActionEvent event)
