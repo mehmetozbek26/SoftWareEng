@@ -1,0 +1,4 @@
+C:\Users\Mehmet\Documents\GitHub\SoftWareEng\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Mehmet\Documents\GitHub\SoftWareEng\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Mehmet\Documents\GitHub\SoftWareEng\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Mehmet\Documents\GitHub\SoftWareEng\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
